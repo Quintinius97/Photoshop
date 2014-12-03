@@ -268,7 +268,7 @@ public class Hauptfenster extends javax.swing.JFrame {
 
     private void VerwirbelnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VerwirbelnActionPerformed
         if(picture != null){
-            picture.Verwirbeln();
+            picture.Verwirbeln(200,200,1,10); //Muss geändert werden
         }
     }//GEN-LAST:event_VerwirbelnActionPerformed
 
@@ -380,6 +380,7 @@ public class Hauptfenster extends javax.swing.JFrame {
             g.fillRect(0, 0, jPanel2gr.getWidth(), jPanel2gr.getHeight());
         }
     }
+    
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Comic;
