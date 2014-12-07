@@ -32,9 +32,10 @@ public class Effects {
                 if(abstand<radius) {
                     double winkel=Math.atan2(yalt, xalt);
                     
-                    //SCHLEIFE!!!!!!!!!!!!!
-                    int xneu=(int)Math.cos(winkel+winkelAdd)*(abstand-neigung);
-                    int yneu=(int)Math.sin(winkel+winkelAdd)*(abstand-neigung);
+                    for(int anz=0; anz<6; anz++){ 
+                        int xneu=(int)Math.cos(winkel+winkelAdd)*(abstand-neigung);
+                        int yneu=(int)Math.sin(winkel+winkelAdd)*(abstand-neigung);
+                    }
                 }
             }
         }
