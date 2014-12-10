@@ -268,7 +268,8 @@ public class Hauptfenster extends javax.swing.JFrame {
 
     private void VerwirbelnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VerwirbelnActionPerformed
         if(picture != null){
-            picture.Verwirbeln(200,200,1,10); //Muss geändert werden
+            bi=picture.Verwirbeln(200,200,1,10); //Muss geändert werden
+            jPanel2gr.repaint();
         }
     }//GEN-LAST:event_VerwirbelnActionPerformed
 
