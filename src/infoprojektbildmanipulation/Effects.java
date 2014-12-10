@@ -39,15 +39,15 @@ public class Effects {
                         int yneu=(int)Math.sin(winkel-winkelAdd*anz)*(abstand+neigung*anz);
                         rgb[anz]=new Color(image.getRGB(xneu, yneu));
                     }
-                    int r=0;
-                    int g=0;
-                    int b=0;
+                    double r=0;
+                    double g=0;
+                    double b=0;
                     for(int i=0;i<schweif;i++) {
                         r += rgb[i].getRed()*(7-i)/28*255;
                         g += rgb[i].getGreen()*(7-i)/28*255;
                         b += rgb[i].getBlue()*(7-i)/28*255;
                     }
-                    image.setRGB(xalt, yalt, r*255*255+g*255+b);
+                    image.setRGB(xalt, yalt, (int)(r*255*255+g*255+b));
                 }
             }
         }
