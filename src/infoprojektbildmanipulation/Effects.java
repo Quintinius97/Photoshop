@@ -17,18 +17,20 @@ public class Effects {
     
     /**
      *
-     * @param x Wirbelzentrum
-     * @param y Wirbelzentrum
+     * @param x0 Wirbelzentrum
+     * @param y0 Wirbelzentrum
      * @param neigung Neigung der Kurve Faktor um den r kleiner wird
      * @param radius Radius des Wirbels
      * @return BufferedImage
      */
     public BufferedImage Verwirbeln(int x0, int y0, int neigung, int radius) {
+        System.out.println("Verwirbeln beginnt...");
         double winkelAdd=4*Math.PI/360;
         int schweif=6;
         
         for(int yalt=y0-radius;yalt<y0+radius;yalt++) {
             for(int xalt=x0-radius;xalt<x0+radius;xalt++) {
+                System.out.println("X: "+xalt+" Y: "+yalt);
                 int abstand = (int)Math.sqrt(Math.pow(xalt, 2)+Math.pow(yalt, 2)); //Pythagoras
                 if(abstand<radius) {
                     double winkel=Math.atan2(-yalt-y0, xalt-x0);
@@ -51,6 +53,7 @@ public class Effects {
                 }
             }
         }
+        System.out.println("Done!!!!");
         return image;
     }
     
