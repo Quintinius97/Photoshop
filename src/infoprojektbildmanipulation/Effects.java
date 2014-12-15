@@ -31,7 +31,7 @@ public class Effects {
         for(int yalt=y0-radius;yalt<y0+radius;yalt++) {
             for(int xalt=x0-radius;xalt<x0+radius;xalt++) {
                 System.out.println("X: "+xalt+" Y: "+yalt);
-                int abstand = (int)Math.sqrt(Math.pow(xalt, 2)+Math.pow(yalt, 2)); //Pythagoras
+                int abstand = (int)Math.sqrt(Math.pow(xalt-x0, 2)+Math.pow(yalt-y0, 2)); //Pythagoras
                 if(abstand<radius) {
                     double winkel=Math.atan2(-yalt-y0, xalt-x0);
                     Color[] rgb = new Color[7];
