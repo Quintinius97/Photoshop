@@ -30,10 +30,13 @@ public class Effects {
         
         for(int yalt=y0-radius;yalt<y0+radius;yalt++) {
             for(int xalt=x0-radius;xalt<x0+radius;xalt++) {
-                System.out.println("X: "+xalt+" Y: "+yalt);
+                //System.out.println("X: "+xalt+" Y: "+yalt);
                 int abstand = (int)Math.sqrt(Math.pow(xalt-x0, 2)+Math.pow(yalt-y0, 2)); //Pythagoras
                 if(abstand<radius) {
-                    double winkel=Math.atan2(-yalt-y0, xalt-x0);
+                    double winkel=Math.atan2(-(yalt-y0), xalt-x0);
+                    if(winkel<0) {
+                        winkel=2*Math.PI+winkel;
+                    }
                     Color[] rgb = new Color[7];
                     rgb[0]=new Color(image.getRGB(xalt, yalt));
                     for(int anz=1; anz<=schweif; anz++){ 
