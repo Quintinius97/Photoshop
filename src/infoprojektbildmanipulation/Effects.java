@@ -37,22 +37,25 @@ public class Effects {
                     if(winkel<0) {
                         winkel=2*Math.PI+winkel;
                     }
-                    Color[] rgb = new Color[7];
+                    
+                    Color[] rgb = new Color[schweif+1];
                     rgb[0]=new Color(image.getRGB(xalt, yalt));
+                    
                     for(int anz=1; anz<=schweif; anz++){ 
-                        int xneu=(int)Math.cos(winkel-winkelAdd*anz)*(abstand+neigung*anz);
-                        int yneu=(int)Math.sin(winkel-winkelAdd*anz)*(abstand+neigung*anz);
+                        int xneu=(int)(x0+Math.cos(winkel-winkelAdd*anz)*(abstand+neigung*anz));
+                        int yneu=(int)(y0-Math.sin(winkel-winkelAdd*anz)*(abstand+neigung*anz));
                         rgb[anz]=new Color(image.getRGB(xneu, yneu));
                     }
                     double r=0;
                     double g=0;
                     double b=0;
                     for(int i=0;i<schweif;i++) {
-                        r += rgb[i].getRed()*(7-i)/28*255;
-                        g += rgb[i].getGreen()*(7-i)/28*255;
-                        b += rgb[i].getBlue()*(7-i)/28*255;
+                        r += rgb[i].getRed()*((schweif+1)-i)/(((schweif+1)*(schweif+2))/2);
+                        g += rgb[i].getGreen()*((schweif+1)-i)/(((schweif+1)*(schweif+2))/2);
+                        b += rgb[i].getBlue()*((schweif+1)-i)/(((schweif+1)*(schweif+2))/2);
                     }
-                    image.setRGB(xalt, yalt, (int)(r*255*255+g*255+b));
+                    Color c1=new Color((int)r,(int)g,(int)b);
+                    image.setRGB(xalt, yalt, c1.getRGB());
                 }
             }
         }
