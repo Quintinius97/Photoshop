@@ -298,7 +298,10 @@ public class Hauptfenster extends javax.swing.JFrame {
     }//GEN-LAST:event_KaffeeActionPerformed
 
     private void PuzzleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PuzzleActionPerformed
-        // Hier bitte den Quellcode für das Puzzle einfügen.
+        if(picture != null){
+            bi=picture.Puzzle(10,15); //Muss geändert werden
+            jPanel2gr.repaint();
+        }
     }//GEN-LAST:event_PuzzleActionPerformed
 
     private void ComicActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComicActionPerformed
