@@ -339,23 +339,17 @@ public class Hauptfenster extends javax.swing.JFrame {
         if((y==0) && (x==0)){
             x=evt.getX();
             y=evt.getY();
-            System.out.println("1: "+x+" "+y);
             double piFaktor=bi.getWidth()*1.0/jPanel2gr.getWidth();
             x=(int)(x*piFaktor);
             y=(int)(y*piFaktor);
-            System.out.println(piFaktor);
-            System.out.println("2: "+x+" "+y);
         }else{
             x1=evt.getX();
             y1=evt.getY();
-            System.out.println("3: "+x1+" "+y1);
             double piFaktor1=bi.getWidth()*1.0/jPanel2gr.getWidth();
             x1=(int)(x1*piFaktor1);
             y1=(int)(y1*piFaktor1);
-            System.out.println("4: "+x1+" "+y1);
             
             r=(int)Math.sqrt((x-x1)*(x-x1)+(y-y1)*(y-y1));
-            System.out.println("5: "+r);
         }
     }//GEN-LAST:event_jPanel2grMouseClicked
 
