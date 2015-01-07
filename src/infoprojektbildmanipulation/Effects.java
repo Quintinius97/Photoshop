@@ -33,8 +33,8 @@ public class Effects {
      */
     public BufferedImage Verwirbeln(int x0, int y0, int neigung, int radius) {
         System.out.println("Verwirbeln beginnt...");
-        double winkelAdd=4*Math.PI/360;
-        int schweif=6;
+        double winkelAdd=2*Math.PI/360;
+        int schweif=12;
         
         for(int yalt=y0-radius;yalt<y0+radius;yalt++) {
             for(int xalt=x0-radius;xalt<x0+radius;xalt++) {
