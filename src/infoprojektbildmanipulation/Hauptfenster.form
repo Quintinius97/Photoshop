@@ -45,25 +45,9 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jPanel1kl" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="Verwirbeln" max="32767" attributes="0"/>
-                          <Component id="Wellen" max="32767" attributes="0"/>
-                      </Group>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="Einrollen" max="32767" attributes="0"/>
-                          <Component id="Leinwand" pref="82" max="32767" attributes="0"/>
-                      </Group>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="Ölbild" max="32767" attributes="0"/>
-                          <Component id="Kaffee" pref="82" max="32767" attributes="0"/>
-                      </Group>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="Puzzle" pref="83" max="32767" attributes="0"/>
-                          <Component id="Comic" max="32767" attributes="0"/>
-                      </Group>
+                      <Component id="Verwirbeln" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="182" max="-2" attributes="0"/>
+                      <Component id="Puzzle" min="-2" pref="83" max="-2" attributes="0"/>
                       <EmptySpace min="0" pref="83" max="32767" attributes="0"/>
                   </Group>
               </Group>
@@ -88,20 +72,9 @@
                       </Group>
                       <Component id="jPanel1kl" max="32767" attributes="0"/>
                   </Group>
-                  <Group type="102" attributes="0">
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="Verwirbeln" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="Einrollen" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="Ölbild" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="Puzzle" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="Wellen" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="Leinwand" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="Kaffee" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="Comic" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="Verwirbeln" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="Puzzle" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
@@ -184,60 +157,12 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="VerwirbelnActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="Wellen">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Wellen"/>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="WellenActionPerformed"/>
-      </Events>
-    </Component>
-    <Component class="javax.swing.JButton" name="Einrollen">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Einrollen"/>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="EinrollenActionPerformed"/>
-      </Events>
-    </Component>
-    <Component class="javax.swing.JButton" name="Leinwand">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Leinwand"/>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="LeinwandActionPerformed"/>
-      </Events>
-    </Component>
-    <Component class="javax.swing.JButton" name="&#xd6;lbild">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="&#xd6;lbild"/>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="&#xd6;lbildActionPerformed"/>
-      </Events>
-    </Component>
-    <Component class="javax.swing.JButton" name="Kaffee">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Kaffee"/>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="KaffeeActionPerformed"/>
-      </Events>
-    </Component>
     <Component class="javax.swing.JButton" name="Puzzle">
       <Properties>
         <Property name="text" type="java.lang.String" value="Puzzle"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="PuzzleActionPerformed"/>
-      </Events>
-    </Component>
-    <Component class="javax.swing.JButton" name="Comic">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Comic"/>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ComicActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>

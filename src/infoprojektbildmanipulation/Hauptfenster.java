@@ -60,13 +60,7 @@ public class Hauptfenster extends javax.swing.JFrame {
         };
         waehlen = new javax.swing.JButton();
         Verwirbeln = new javax.swing.JButton();
-        Wellen = new javax.swing.JButton();
-        Einrollen = new javax.swing.JButton();
-        Leinwand = new javax.swing.JButton();
-        Ölbild = new javax.swing.JButton();
-        Kaffee = new javax.swing.JButton();
         Puzzle = new javax.swing.JButton();
-        Comic = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -126,52 +120,10 @@ public class Hauptfenster extends javax.swing.JFrame {
             }
         });
 
-        Wellen.setText("Wellen");
-        Wellen.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                WellenActionPerformed(evt);
-            }
-        });
-
-        Einrollen.setText("Einrollen");
-        Einrollen.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                EinrollenActionPerformed(evt);
-            }
-        });
-
-        Leinwand.setText("Leinwand");
-        Leinwand.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                LeinwandActionPerformed(evt);
-            }
-        });
-
-        Ölbild.setText("Ölbild");
-        Ölbild.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ÖlbildActionPerformed(evt);
-            }
-        });
-
-        Kaffee.setText("Kaffee");
-        Kaffee.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                KaffeeActionPerformed(evt);
-            }
-        });
-
         Puzzle.setText("Puzzle");
         Puzzle.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 PuzzleActionPerformed(evt);
-            }
-        });
-
-        Comic.setText("Comic");
-        Comic.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ComicActionPerformed(evt);
             }
         });
 
@@ -195,21 +147,9 @@ public class Hauptfenster extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jPanel1kl, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(Verwirbeln, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(Wellen, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(Einrollen, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(Leinwand, javax.swing.GroupLayout.DEFAULT_SIZE, 82, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(Ölbild, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(Kaffee, javax.swing.GroupLayout.DEFAULT_SIZE, 82, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(Puzzle, javax.swing.GroupLayout.DEFAULT_SIZE, 83, Short.MAX_VALUE)
-                            .addComponent(Comic, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(Verwirbeln)
+                        .addGap(182, 182, 182)
+                        .addComponent(Puzzle, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 83, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -227,18 +167,9 @@ public class Hauptfenster extends javax.swing.JFrame {
                                 .addComponent(laden)
                                 .addComponent(waehlen)))
                         .addComponent(jPanel1kl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(Verwirbeln)
-                            .addComponent(Einrollen)
-                            .addComponent(Ölbild)
-                            .addComponent(Puzzle))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(Wellen)
-                            .addComponent(Leinwand)
-                            .addComponent(Kaffee)
-                            .addComponent(Comic))))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(Verwirbeln)
+                        .addComponent(Puzzle)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel2gr, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -284,40 +215,12 @@ public class Hauptfenster extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_VerwirbelnActionPerformed
 
-    private void WellenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_WellenActionPerformed
-        if(picture != null){
-            picture.Wellen();
-        }
-    }//GEN-LAST:event_WellenActionPerformed
-
-    private void EinrollenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EinrollenActionPerformed
-        if(picture != null){
-            picture.Einrollen();
-        }
-    }//GEN-LAST:event_EinrollenActionPerformed
-
-    private void LeinwandActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LeinwandActionPerformed
-        // Hier bitte den Quellcode für die Leinwand einfügen.
-    }//GEN-LAST:event_LeinwandActionPerformed
-
-    private void ÖlbildActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ÖlbildActionPerformed
-        // Hier bitte den Quellcode zum Ölbild einfügen.
-    }//GEN-LAST:event_ÖlbildActionPerformed
-
-    private void KaffeeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_KaffeeActionPerformed
-        // Hier den Quellcode für den Kaffeefleck einfügen
-    }//GEN-LAST:event_KaffeeActionPerformed
-
     private void PuzzleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PuzzleActionPerformed
         if(picture != null){
             bi=picture.Puzzle(10,15); //Muss geändert werden
             jPanel2gr.repaint();
         }
     }//GEN-LAST:event_PuzzleActionPerformed
-
-    private void ComicActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComicActionPerformed
-        // Hier bitte den Quellcode für den Comiceffekt einfügen.
-    }//GEN-LAST:event_ComicActionPerformed
 
     private void speichernActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_speichernActionPerformed
          
@@ -416,13 +319,8 @@ public class Hauptfenster extends javax.swing.JFrame {
     
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton Comic;
-    private javax.swing.JButton Einrollen;
-    private javax.swing.JButton Kaffee;
-    private javax.swing.JButton Leinwand;
     private javax.swing.JButton Puzzle;
     private javax.swing.JButton Verwirbeln;
-    private javax.swing.JButton Wellen;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JPanel jPanel1kl;
     private javax.swing.JPanel jPanel2gr;
@@ -430,6 +328,5 @@ public class Hauptfenster extends javax.swing.JFrame {
     private javax.swing.JButton laden;
     private javax.swing.JButton speichern;
     private javax.swing.JButton waehlen;
-    private javax.swing.JButton Ölbild;
     // End of variables declaration//GEN-END:variables
 }
