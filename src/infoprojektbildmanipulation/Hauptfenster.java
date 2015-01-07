@@ -22,6 +22,10 @@ public class Hauptfenster extends javax.swing.JFrame {
     BufferedImage bi=null;
     BufferedImage bildoriginal=null;
     Effects picture = null;
+    int x=0,y=0;
+    int x1=0,y1=0;
+    int r=0;
+    
     /**
      * Creates new form Hauptfenster
      */
@@ -88,6 +92,12 @@ public class Hauptfenster extends javax.swing.JFrame {
         speichern.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 speichernActionPerformed(evt);
+            }
+        });
+
+        jPanel2gr.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jPanel2grMouseClicked(evt);
             }
         });
 
@@ -268,7 +278,8 @@ public class Hauptfenster extends javax.swing.JFrame {
 
     private void VerwirbelnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VerwirbelnActionPerformed
         if(picture != null){
-            bi=picture.Verwirbeln(500,400,1,300); //Muss geändert werden
+            bi=picture.Verwirbeln(x,y,1,r); //Muss geändert werden
+            x=0;y=0;x1=0;y1=0;r=0;
             jPanel2gr.repaint();
         }
     }//GEN-LAST:event_VerwirbelnActionPerformed
@@ -323,6 +334,30 @@ public class Hauptfenster extends javax.swing.JFrame {
             System.out.println("Beim Speichern der Datei ist ein Problem aufgetreten!");
         }
     }//GEN-LAST:event_speichernActionPerformed
+
+    private void jPanel2grMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel2grMouseClicked
+        if((y==0) && (x==0)){
+            x=evt.getX();
+            y=evt.getY();
+            System.out.println("1: "+x+" "+y);
+            double piFaktor=bi.getWidth()*1.0/jPanel2gr.getWidth();
+            x=(int)(x*piFaktor);
+            y=(int)(y*piFaktor);
+            System.out.println(piFaktor);
+            System.out.println("2: "+x+" "+y);
+        }else{
+            x1=evt.getX();
+            y1=evt.getY();
+            System.out.println("3: "+x1+" "+y1);
+            double piFaktor1=bi.getWidth()*1.0/jPanel2gr.getWidth();
+            x1=(int)(x1*piFaktor1);
+            y1=(int)(y1*piFaktor1);
+            System.out.println("4: "+x1+" "+y1);
+            
+            r=(int)Math.sqrt((x-x1)*(x-x1)+(y-y1)*(y-y1));
+            System.out.println("5: "+r);
+        }
+    }//GEN-LAST:event_jPanel2grMouseClicked
 
     /**
      * @param args the command line arguments

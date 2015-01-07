@@ -148,6 +148,9 @@
       </Events>
     </Component>
     <Container class="javax.swing.JPanel" name="jPanel2gr">
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jPanel2grMouseClicked"/>
+      </Events>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new javax.swing.JPanel(){&#xa;    public void paintComponent(Graphics g){&#xa;        super.paintComponent(g);&#xa;        zeichneBildGross(g);&#xa;    }&#xa;}"/>
       </AuxValues>
