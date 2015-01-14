@@ -19,13 +19,14 @@ import javax.swing.JFileChooser;
  */
 public class Hauptfenster extends javax.swing.JFrame {
 
-    BufferedImage bi=null;
-    BufferedImage bildoriginal=null;
+    BufferedImage bi = null;
+    BufferedImage bildoriginal = null;
     Effects picture = null;
-    int x=0,y=0;
-    int x1=0,y1=0;
-    int r=0;
-    
+    int x = 0, y = 0;
+    int x1 = 0, y1 = 0;
+    int r = 0;
+    boolean v = false;
+
     /**
      * Creates new form Hauptfenster
      */
@@ -60,6 +61,7 @@ public class Hauptfenster extends javax.swing.JFrame {
         };
         waehlen = new javax.swing.JButton();
         Verwirbeln = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -140,7 +142,8 @@ public class Hauptfenster extends javax.swing.JFrame {
                         .addComponent(jPanel1kl, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(Verwirbeln)
-                        .addGap(0, 348, Short.MAX_VALUE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 344, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -156,37 +159,38 @@ public class Hauptfenster extends javax.swing.JFrame {
                             .addComponent(laden)
                             .addComponent(waehlen)))
                     .addComponent(jPanel1kl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(Verwirbeln, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(Verwirbeln, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel2gr, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-    
+
     // Auswählen des Bildes
     private void waehlenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_waehlenActionPerformed
         final JFileChooser fc = new JFileChooser();
         fc.setCurrentDirectory(new File("/"));
         int zahl = fc.showOpenDialog(this);
-        File f=fc.getSelectedFile();
+        File f = fc.getSelectedFile();
         jTextField1.setText(f.getAbsolutePath());
     }//GEN-LAST:event_waehlenActionPerformed
 
     // Laden des Bildes
     private void ladenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ladenActionPerformed
-        String pfad=jTextField1.getText();
-        if (pfad!=null){
+        String pfad = jTextField1.getText();
+        if (pfad != null) {
             try {
-                bi=ImageIO.read(new File(pfad));
+                bi = ImageIO.read(new File(pfad));
                 picture = new Effects(bi);
-                bildoriginal=bi;
-                
-                Graphics g=jPanel1kl.getGraphics();
-                int b=jPanel1kl.getWidth();
-                int hneu1=bildoriginal.getHeight()*b/bildoriginal.getWidth();
-                 g.drawImage(bildoriginal, 0, 0, b, hneu1, this);
-                       
+                bildoriginal = bi;
+
+                Graphics g = jPanel1kl.getGraphics();
+                int b = jPanel1kl.getWidth();
+                int hneu1 = bildoriginal.getHeight() * b / bildoriginal.getWidth();
+                g.drawImage(bildoriginal, 0, 0, b, hneu1, this);
+
                 jPanel2gr.repaint();
             } catch (IOException ex) {
                 System.out.println("Beim Laden der Datei ist ein Fehler aufgetreten!");
@@ -195,22 +199,19 @@ public class Hauptfenster extends javax.swing.JFrame {
     }//GEN-LAST:event_ladenActionPerformed
 
     private void VerwirbelnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VerwirbelnActionPerformed
-        if(picture != null){
-            bi=picture.Verwirbeln(x,y,1,r); //Muss geändert werden
-            x=0;y=0;x1=0;y1=0;r=0;
-            jPanel2gr.repaint();
-        }
+        jLabel1.setText("<html>Bild Verwirbeln: <br> Bitte Wählen sie durch Klicken das Wirbelzentrum aus.</html>");
+        v = true;
     }//GEN-LAST:event_VerwirbelnActionPerformed
 
     private void speichernActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_speichernActionPerformed
-         
+
         final JFileChooser fc = new JFileChooser();
 
         fc.setCurrentDirectory(new File("/"));
         int zahl = fc.showSaveDialog(this);
-        File f=fc.getSelectedFile();
-        System.out.println("Speichern als "+f.getAbsolutePath());
-        
+        File f = fc.getSelectedFile();
+        System.out.println("Speichern als " + f.getAbsolutePath());
+
         try {
             ImageIO.write(bi, "png", f);
         } catch (IOException ex) {
@@ -219,20 +220,33 @@ public class Hauptfenster extends javax.swing.JFrame {
     }//GEN-LAST:event_speichernActionPerformed
 
     private void jPanel2grMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel2grMouseClicked
-        if((y==0) && (x==0)){
-            x=evt.getX();
-            y=evt.getY();
-            double piFaktor=bi.getWidth()*1.0/jPanel2gr.getWidth();
-            x=(int)(x*piFaktor);
-            y=(int)(y*piFaktor);
-        }else{
-            x1=evt.getX();
-            y1=evt.getY();
-            double piFaktor1=bi.getWidth()*1.0/jPanel2gr.getWidth();
-            x1=(int)(x1*piFaktor1);
-            y1=(int)(y1*piFaktor1);
-            
-            r=(int)Math.sqrt((x-x1)*(x-x1)+(y-y1)*(y-y1));
+        if (v == true) {
+            if ((y == 0) && (x == 0)) {
+                x = evt.getX();
+                y = evt.getY();
+                jLabel1.setText("<html>Bild Verwirbeln: <br> Wählen sie durch erneutes Klicken den Radius aus</html>");
+                double piFaktor = bi.getWidth() * 1.0 / jPanel2gr.getWidth();
+                x = (int) (x * piFaktor);
+                y = (int) (y * piFaktor);
+            } else {
+                x1 = evt.getX();
+                y1 = evt.getY();
+                double piFaktor1 = bi.getWidth() * 1.0 / jPanel2gr.getWidth();
+                x1 = (int) (x1 * piFaktor1);
+                y1 = (int) (y1 * piFaktor1);
+
+                r = (int) Math.sqrt((x - x1) * (x - x1) + (y - y1) * (y - y1));
+                if ((picture != null)) {
+                    bi = picture.Verwirbeln(x, y, 1, r);
+                    x = 0;
+                    y = 0;
+                    x1 = 0;
+                    y1 = 0;
+                    r = 0;
+                    v=false;
+                    jPanel2gr.repaint();
+                }
+            }
         }
     }//GEN-LAST:event_jPanel2grMouseClicked
 
@@ -271,36 +285,37 @@ public class Hauptfenster extends javax.swing.JFrame {
         });
     }
 
-    public void zeichneBildKlein(Graphics h){
-        if (bi!=null){
+    public void zeichneBildKlein(Graphics h) {
+        if (bi != null) {
 
-            int w=jPanel1kl.getWidth();
-            int hneu=bildoriginal.getHeight()*w/bildoriginal.getWidth();
-            
+            int w = jPanel1kl.getWidth();
+            int hneu = bildoriginal.getHeight() * w / bildoriginal.getWidth();
+
             h.drawImage(bildoriginal, 0, 0, w, hneu, this);
         } else {
-            h.setColor(new Color(255,255,255));
+            h.setColor(new Color(255, 255, 255));
             h.fillRect(0, 0, jPanel1kl.getWidth(), jPanel1kl.getHeight());
         }
     }
-    
-    public void zeichneBildGross(Graphics g){
-        if (bi!=null){
 
-            int w=jPanel2gr.getWidth();
-            int hneu=bi.getHeight()*w/bi.getWidth();
-            
-            g.drawImage(bi,0 , 0, w,hneu,this);
+    public void zeichneBildGross(Graphics g) {
+        if (bi != null) {
+
+            int w = jPanel2gr.getWidth();
+            int hneu = bi.getHeight() * w / bi.getWidth();
+
+            g.drawImage(bi, 0, 0, w, hneu, this);
         } else {
-            g.setColor(new Color(255,255,255));
+            g.setColor(new Color(255, 255, 255));
             g.fillRect(0, 0, jPanel2gr.getWidth(), jPanel2gr.getHeight());
         }
     }
-    
-    
+
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Verwirbeln;
     private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1kl;
     private javax.swing.JPanel jPanel2gr;
     private javax.swing.JTextField jTextField1;
