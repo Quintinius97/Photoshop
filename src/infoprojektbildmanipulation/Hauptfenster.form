@@ -46,9 +46,7 @@
                       <Component id="jPanel1kl" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="Verwirbeln" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="182" max="-2" attributes="0"/>
-                      <Component id="Puzzle" min="-2" pref="83" max="-2" attributes="0"/>
-                      <EmptySpace min="0" pref="83" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="348" max="32767" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
@@ -59,23 +57,18 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                      <Group type="102" attributes="0">
-                          <Component id="jTextField1" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="32767" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="speichern" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="laden" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="waehlen" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
+              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                  <Group type="102" attributes="0">
+                      <Component id="jTextField1" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="speichern" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="laden" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="waehlen" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <Component id="jPanel1kl" max="32767" attributes="0"/>
                   </Group>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="Verwirbeln" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="Puzzle" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
+                  <Component id="jPanel1kl" max="32767" attributes="0"/>
+                  <Component id="Verwirbeln" max="32767" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="jPanel2gr" max="32767" attributes="0"/>
@@ -155,14 +148,6 @@
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="VerwirbelnActionPerformed"/>
-      </Events>
-    </Component>
-    <Component class="javax.swing.JButton" name="Puzzle">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Puzzle"/>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="PuzzleActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>

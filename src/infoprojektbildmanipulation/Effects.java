@@ -1,15 +1,7 @@
 package infoprojektbildmanipulation;
 
 import java.awt.Color;
-import java.awt.Graphics2D;
-import java.awt.geom.Line2D;
-import java.awt.geom.QuadCurve2D;
 import java.awt.image.BufferedImage;
-import java.io.ByteArrayInputStream;
-import java.io.IOException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.imageio.ImageIO;
 
 /**
  *
@@ -69,70 +61,5 @@ public class Effects {
         }
         System.out.println("Done!!!!");
         return image;
-    }
-    
-    public BufferedImage Wellen() {
-        return null;
-    }
-    
-    public BufferedImage Einrollen() {
-        return null;
-    }
-    
-    public BufferedImage Leinwand() {
-        return null;
-    }
-    
-    public BufferedImage Oelbild() {
-        return null;
-    }
-    
-    public BufferedImage Kaffee() {
-        return null;
-    }
-    
-    /**
-     *
-     * @param anzahlx Anzahl der Puzzleteile in X Richtung
-     * @param anzahly Anzahl der Puzzleteile in Y Richtung
-     * @return BufferedImage
-     */
-    public BufferedImage Puzzle(int anzahlx, int anzahly) {
-        int hoehe = image.getHeight()/anzahly;
-        int breite = image.getWidth()/anzahlx;
-        Graphics2D zeichner = image.createGraphics();
-        
-        for(int y=hoehe;y<image.getHeight();y+=hoehe) {
-            zeichner.draw(new Line2D.Float(0, y, 1/3*breite, y));
-            for(int x=(2/3*breite);x<image.getWidth()-breite;x+=breite) {
-                zeichner.draw(new Line2D.Float(x, y, x+(2/3*breite), y));
-            }
-            zeichner.draw(new Line2D.Float(image.getWidth()-(1/3*breite), y, image.getWidth(), y));
-        }
-        for(int x=breite;x<image.getWidth();x+=breite) {
-            zeichner.draw(new Line2D.Float(x, 0, x, 1/3*hoehe));
-            for(int y=(2/3*hoehe);y<image.getHeight()-hoehe;y+=hoehe) {
-                zeichner.draw(new Line2D.Float(x, y, x, y+(2/3*hoehe)));
-            }
-            zeichner.draw(new Line2D.Float(x, image.getHeight()-(1/3*breite), x, image.getHeight()));
-        }
-        
-        
-        
-        //Graphics2D to BufferedImage
-        BufferedImage bImage = null;
-        ByteArrayInputStream bais = new ByteArrayInputStream(zeichner.toString().getBytes());
-        try {
-            bImage = ImageIO.read(bais);
-        } catch (IOException ex) {
-            Logger.getLogger(Effects.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        image= bImage;
-        System.out.println("DONE");
-        return image;
-    }
-    
-    public BufferedImage Comic() {
-        return null;
     }
 }
